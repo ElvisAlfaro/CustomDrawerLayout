@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.customdrawerlayout.databinding.ActivityMainBinding
 import com.example.customdrawerlayout.with_menu_xml.WithMenuXmlActivity
+import com.example.customdrawerlayout.with_recycler_view.WithRecyclerViewActivity
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,10 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             btnDrawer2.setOnClickListener {
-                Snackbar.make(binding.root, "Proximamente", Snackbar.LENGTH_SHORT).show()
+                startActivity(
+                    Intent(this@MainActivity, WithRecyclerViewActivity::class.java)
+                )
+                //Snackbar.make(binding.root, "Proximamente", Snackbar.LENGTH_SHORT).show()
             }
         }
     }

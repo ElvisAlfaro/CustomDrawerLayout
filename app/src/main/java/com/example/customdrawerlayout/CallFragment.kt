@@ -7,18 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.customdrawerlayout.databinding.FragmentCallBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_COLOR_RES = "ARG_COLOR_RES"
 
-class CallFragment(val colorRes: Int) : Fragment() {
+class CallFragment : Fragment() {
+    private var colorRes: Int? = null
     private val binding: FragmentCallBinding by lazy {
         FragmentCallBinding.inflate(layoutInflater)
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance(colorRes: Int): CallFragment {
+            val args = Bundle()
+            args.putInt(ARG_COLOR_RES, colorRes)
+            val fragment = CallFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        colorRes = arguments?.getInt(ARG_COLOR_RES, android.R.color.transparent)
     }
 
     override fun onCreateView(
@@ -28,6 +38,6 @@ class CallFragment(val colorRes: Int) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.root.setBackgroundResource(colorRes)
+        binding.root.setBackgroundResource(colorRes!!)
     }
 }
