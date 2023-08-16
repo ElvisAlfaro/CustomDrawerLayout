@@ -7,7 +7,6 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.example.customdrawerlayout.CallFragment
 import com.example.customdrawerlayout.R
-import com.example.customdrawerlayout.databinding.ActivityWithMenuXmlBinding
 import com.example.customdrawerlayout.databinding.ActivityWithRecyclerViewBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -44,7 +43,7 @@ class WithRecyclerViewActivity : AppCompatActivity(), RecyclerMenuAdapter.MenuCl
     }
 
     private fun setUpMenuRecycler() {
-        binding.rvMenuItems.adapter = RecyclerMenuAdapter(getMenuItems(), this)
+        binding.layoutMenuRecycler.rvMenuItems.adapter = RecyclerMenuAdapter(getMenuItems(), this)
     }
 
     private fun getMenuItems(): List<MenuItemModel> {

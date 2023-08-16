@@ -10,13 +10,8 @@
     <include
         android:id="@+id/layout_toolbar_fragment"
         layout="@layout/layout_toolbar_fragment"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_menu_items"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    <include
+        android:id="@+id/layout_menu_recycler"
+        layout="@layout/layout_menu_recycler"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
